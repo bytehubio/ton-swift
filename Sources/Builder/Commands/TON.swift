@@ -66,21 +66,6 @@ struct TON: AwaitingParsableCommand {
             throw URLError.notDirectory(url: sourceURL)
         }
         
-        let applyPatchIfNeeded = { () throws -> Void in
-            let patchesURL = try fileManager.cacheURL(withPath: "/build/ton/patches", createIfNeeded: true)
-            let patchURL = try Resource.tonM1Patch.write(into: patchesURL)
-            
-            try execute(
-                """
-                if [[ `uname -m` == 'arm64' ]]; then
-                    cd \(sourceURL.relativePath)
-                    git apply \(patchURL.relativePath)
-                fi
-                """,
-                workingDirectory: sourceURL
-            )
-        }
-        
         guard !fileManager.directoryExists(atPath: sourceURL.appendingPathComponent(".git").relativePath)
         else {
             stdout(
@@ -102,8 +87,6 @@ struct TON: AwaitingParsableCommand {
                 outputRedirection: .none
             )
             
-            try applyPatchIfNeeded()
-            
             return
         }
         
@@ -122,8 +105,6 @@ struct TON: AwaitingParsableCommand {
             workingDirectory: sourceURL,
             outputRedirection: .none
         )
-        
-        try applyPatchIfNeeded()
     }
     
     private func prepare(
