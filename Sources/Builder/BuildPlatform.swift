@@ -4,7 +4,15 @@
 
 import Foundation
 
-enum BuildPlatform: String, CaseIterable {
+enum BuildPlatform: String {
+    
+    static var targets: [BuildPlatform] = [
+        .iOS, .iOSSimulator,
+        .tvOS, .tvOSSimulator,
+//        .watchOS, .watchOSSimulator,
+        .macOS,
+        .macCatalyst,
+    ]
     
     case iOS = "iphoneos"
     case iOSSimulator = "iphonesimulator"

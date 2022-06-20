@@ -32,16 +32,8 @@ struct TON: AwaitingParsableCommand {
             """
         )
         
-        let platforms: [BuildPlatform] = [
-            .iOS, .iOSSimulator,
-            .tvOS, .tvOSSimulator,
-            .watchOS, .watchOSSimulator,
-            .macOS,
-            .macCatalyst,
-        ]
-        
         try prepare(sourceURL: sourceURL, to: outputURL)
-        for platform in platforms {
+        for platform in BuildPlatform.targets {
             try await build(
                 for: platform,
                 sourceURL: sourceURL,

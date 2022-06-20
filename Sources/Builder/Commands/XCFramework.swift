@@ -80,7 +80,7 @@ struct XCFramework: AwaitingParsableCommand {
             stdout("Using previously builded library: \(url.relativePath)", newlines: false)
         }
         
-        let platforms = BuildPlatform.allCases
+        let platforms = BuildPlatform.targets
         var arguments = [String]()
         
         platforms.forEach({ platform in

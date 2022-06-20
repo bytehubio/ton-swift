@@ -39,19 +39,11 @@ struct OpenSSL: AwaitingParsableCommand {
             """
         )
         
-        let platforms: [BuildPlatform] = [
-            .iOS, .iOSSimulator,
-            .tvOS, .tvOSSimulator,
-            .watchOS, .watchOSSimulator,
-            .macOS,
-            .macCatalyst,
-        ]
-        
         let configurationsURL = buildURL.appendingPathComponent("configurations")
         try fileManager.createDirectory(at: configurationsURL, withIntermediateDirectories: true, attributes: nil)
         try Resource.openSSLPlatforms.write(into: configurationsURL)
         
-        for platform in platforms {
+        for platform in BuildPlatform.targets {
             try await build(
                 for: platform,
                 configurationsURL: configurationsURL,
