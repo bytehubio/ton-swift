@@ -303,7 +303,7 @@ fileprivate extension BuildPlatform {
         case .tvOS, .tvOSSimulator: return "12.0"
         case .watchOS, .watchOSSimulator: return "6.0"
         case .macOS: return "11.0"
-        case .macCatalyst: return "13.0"
+        case .macCatalyst: return "14.0"
         }
     }
 }
