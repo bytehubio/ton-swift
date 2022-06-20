@@ -114,7 +114,7 @@ struct TON: AwaitingParsableCommand {
         try execute(
             """
             #!/bin/sh
-            git clone git@github.com:newton-blockchain/ton.git \(sourceURL.relativePath)
+            git clone git@github.com:ton-blockchain/ton.git \(sourceURL.relativePath)
             cd \(sourceURL.relativePath)
             git submodule update --init --recursive
             git submodule sync --recursive
