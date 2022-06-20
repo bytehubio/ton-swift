@@ -48,7 +48,7 @@ enum BuildPlatform: String, CaseIterable {
         case .tvOS, .tvOSSimulator: return "11.0"
         case .watchOS, .watchOSSimulator: return "6.0"
         case .macOS: return "10.11"
-        case .macCatalyst: return "10.15"
+        case .macCatalyst: return "14.0" // using iOS version for .macCatalyst build
         }
     }
     

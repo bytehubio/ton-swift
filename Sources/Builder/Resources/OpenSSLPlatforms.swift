@@ -117,14 +117,14 @@ my %targets = ();
     # x86_64
     "mac-catalyst-x86_64" => {
         inherit_from     => [ "darwin64-x86_64-cc", "ios-base" ],
-        cflags           => add("-target x86_64-apple-ios13.0-macabi"),
+        cflags           => add('-target x86_64-apple-ios$(MIN_SDK_VERSION)-macabi'),
         sys_id           => "MacOSX",
     },
 
     # arm64
     "mac-catalyst-arm64" => {
         inherit_from     => [ "darwin64-arm64-cc", "ios-base" ],
-        cflags           => add("-target arm64-apple-ios13.0-macabi"),
+        cflags           => add('-target arm64-apple-ios$(MIN_SDK_VERSION)-macabi'),
         sys_id           => "MacOSX",
     },
 
