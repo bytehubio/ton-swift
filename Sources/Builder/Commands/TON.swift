@@ -71,7 +71,8 @@ struct TON: AwaitingParsableCommand {
                 """
                 #!/bin/sh
                 cd \(sourceURL.relativePath)
-                git checkout .
+                git checkout hueton
+                git pull
                 git submodule update --init --recursive
                 git submodule sync --recursive
                 """,
@@ -89,7 +90,9 @@ struct TON: AwaitingParsableCommand {
         try execute(
             """
             #!/bin/sh
-            git clone git@github.com:ton-blockchain/ton.git \(sourceURL.relativePath)
+            git clone git@github.com:hueton/ton.git \(sourceURL.relativePath)
+            git checkout hueton
+            git pull
             cd \(sourceURL.relativePath)
             git submodule update --init --recursive
             git submodule sync --recursive
