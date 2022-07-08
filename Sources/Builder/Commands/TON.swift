@@ -189,7 +189,7 @@ struct TON: AwaitingParsableCommand {
                 "-DOPENSSL_FOUND=1",
                 "-DOPENSSL_CRYPTO_LIBRARY=\((try BuildLibrary.openssl.buildLibURL(for: platform)).relativePath)",
                 "-DOPENSSL_INCLUDE_DIR=\((try BuildLibrary.openssl.buildIncludeURL(for: platform)).relativePath)",
-                "-DCMAKE_BUILD_TYPE=Debug",
+                "-DCMAKE_BUILD_TYPE=Release",
                 "-DTON_ONLY_TONLIB=ON",
                 "-DCMAKE_TOOLCHAIN_FILE=\(toolchainURL.relativePath)",
                 "-DTON_ARCH=",

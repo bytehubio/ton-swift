@@ -137,6 +137,13 @@ set(UNIX True)
 set(APPLE True)
 set(IOS True)
 
+# Force set gnu comiler
+set(CMAKE_C_COMPILER /usr/bin/gcc)
+set(CMAKE_CXX_COMPILER /usr/bin/g++)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
 option(DROP_32_BIT "Drops the 32-bit targets universally." YES)
 
 # List of supported platform values

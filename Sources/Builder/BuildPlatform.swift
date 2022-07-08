@@ -9,7 +9,7 @@ enum BuildPlatform: String {
     static var targets: [BuildPlatform] = [
         .iOS, .iOSSimulator,
         .tvOS, .tvOSSimulator,
-//        .watchOS, .watchOSSimulator,
+        .watchOS, .watchOSSimulator,
         .macOS,
         .macCatalyst,
     ]
